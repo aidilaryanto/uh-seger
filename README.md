@@ -1,28 +1,28 @@
 <p align="center">
-    <a href="https://github.com/UsergeTeam/Userge">
-        <img src="resources/userge.png" alt="Userge">
+    <a href="https://github.com/aidilaryanto/uh-seger">
+        <img src="resources/userge.png" alt="uh-seger">
     </a>
     <br>
     <b>Pluggable Telegram UserBot</b>
     <br>
-    <a href="https://github.com/UsergeTeam/Userge#inspiration-">Inspiration</a>
+    <a href="https://github.com/aidilaryanto/uh-seger#inspiration-">Inspiration</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#features-">Features</a>
+    <a href="https://github.com/aidilaryanto/uh-seger#features-">Features</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#example-plugin-">Example</a>
+    <a href="https://github.com/aidilaryanto/uh-seger#example-plugin-">Example</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#requirements-">Requirements</a>
+    <a href="https://github.com/aidilaryanto/uh-seger#requirements-">Requirements</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#project-credits-">Project Credits</a>
+    <a href="https://github.com/aidilaryanto/uh-seger#project-credits-">Project Credits</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#copyright--license-">Copyright & License</a>
+    <a href="https://github.com/aidilaryanto/uh-seger#copyright--license-">Copyright & License</a>
 </p>
 
-# Userge 🔥
+# Uh-Seger 🔥
 
 [![Build Status](https://travis-ci.com/UsergeTeam/Userge.svg?branch=dev)](https://travis-ci.com/UsergeTeam/Userge) [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/UsergeTeam/Userge/?ref=repository-badge)
 
-> **Userge** is a Powerful , _Pluggable_ Telegram UserBot written in _Python_ using [Pyrogram](https://github.com/pyrogram/pyrogram).
+> **Uh-Seger** is a Powerful , _Pluggable_ Telegram UserBot written in _Python_ using [Pyrogram](https://github.com/pyrogram/pyrogram).
 
 ## Inspiration 😇
 
@@ -93,14 +93,14 @@ async def testing(message: Message):
 
   > Finally turn on the app and check the logs (settings -> view logs) :)
 
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/UsergeTeam/Userge/tree/master)
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/aidilaryanto/uh-seger/tree/master)
 
 * **Other Method** 🔧
 
   ```bash
   # clone the repo
-  git clone https://github.com/UsergeTeam/Userge.git
-  cd Userge
+  git clone https://github.com/aidilaryanto/uh-seger.git
+  cd uh-seger
 
   # create virtualenv
   virtualenv -p /usr/bin/python3 venv
