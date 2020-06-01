@@ -68,8 +68,8 @@ class Config:
     LOAD_UNOFFICIAL_PLUGINS = bool(os.environ.get("LOAD_UNOFFICIAL_PLUGINS", False))
     CMD_TRIGGER = os.environ.get("CMD_TRIGGER", '.')
     SUDO_TRIGGER = os.environ.get("SUDO_TRIGGER", '!')
-    FINISHED_PROGRESS_STR = os.environ.get("FINISHED_PROGRESS_STR", '█')
-    UNFINISHED_PROGRESS_STR = os.environ.get("UNFINISHED_PROGRESS_STR", '░')
+    FINISHED_PROGRESS_STR = os.environ.get("FINISHED_PROGRESS_STR", '●')
+    UNFINISHED_PROGRESS_STR = os.environ.get("UNFINISHED_PROGRESS_STR", '○')
     TMP_PATH = "userge/plugins/temp/"
     MAX_MESSAGE_LENGTH = 4096
     MSG_DELETE_TIMEOUT = 120
