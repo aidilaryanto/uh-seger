@@ -87,6 +87,8 @@ class Config:
 
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
 
+    INDEX_LINK = os.environ.get("INDEX_LINK", None)
+
     HEROKU_APP = None
 
     HEROKU_GIT_URL = None
