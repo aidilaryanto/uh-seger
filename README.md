@@ -38,10 +38,14 @@
 ## Features 😍
 
 * Powerful and Very Useful **built-in** Plugins
-  * gdrive ( Team Drives Supported! ) 🤥
-  * zip / unzip
-  * telegram upload
-  * telegram download
+  * gdrive [ upload / download / etc ] ( Team Drives Supported! ) 🤥
+  * zip / tar / unzip / untar / unrar
+  * telegram upload / download
+  * pmpermit / afk
+  * notes / filters
+  * split / combine
+  * gadmin
+  * plugin manager
   * etc...
 * Channel & Group log support
 * Database support
@@ -51,8 +55,6 @@
 * Easy to write modules with the modified client
 
 ## Example Plugin 🤨
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dacadcbabdb74de3903ddae25dc95375)](https://app.codacy.com/gh/UsergeTeam/Userge?utm_source=github.com&utm_medium=referral&utm_content=UsergeTeam/Userge&utm_campaign=Badge_Grade_Dashboard)
 
 ```python
 from userge import userge, Message
@@ -72,7 +74,7 @@ async def testing(message: Message):
 
 ## Requirements 🥴
 
-* Python 3.6 or Higher 👻
+* Python 3.7 or Higher 👻
 * Telegram [API Keys](https://my.telegram.org/apps)
 * Google Drive [API Keys](https://console.developers.google.com/)
 * MongoDB [Database URL](https://cloud.mongodb.com/)
