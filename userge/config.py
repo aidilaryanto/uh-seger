@@ -75,7 +75,6 @@ class Config:
     FINISHED_PROGRESS_STR = os.environ.get("FINISHED_PROGRESS_STR", '●')
     UNFINISHED_PROGRESS_STR = os.environ.get("UNFINISHED_PROGRESS_STR", '○')
     TMP_PATH = "userge/plugins/temp/"
-    INDEX_LINK = os.environ.get("INDEX_LINK", None)
     MAX_MESSAGE_LENGTH = 4096
     MSG_DELETE_TIMEOUT = 120
     WELCOME_DELETE_TIMEOUT = 120
