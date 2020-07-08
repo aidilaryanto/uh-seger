@@ -126,7 +126,7 @@ async def testing(message: Message):
 ## Generate String Session
 Easy way to generate string session on Repl.it:
 
-<p align="center"><a href="http://userge.projectdils.repl.run"> <img src="https://telegra.ph/file/7193be9fb5f9caa50bae8.png" alt="Generate String Session" /></a></p>
+<p align="center"><a href="http://string.projectdils.repl.run"> <img src="https://telegra.ph/file/7193be9fb5f9caa50bae8.png" alt="Generate String Session" /></a></p>
 
 
 ### Video Tutorial 🎥
