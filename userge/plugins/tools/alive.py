@@ -22,8 +22,6 @@ async def alive(message: Message):
     output = f"""
 **UH-SEGER is Up and Running**
 
-       __Durable as a Serge__
-
 • **uptime** : `{userge.uptime}`
 • **python version** : `{versions.__python_version__}`
 • **pyrogram version** : `{versions.__pyro_version__}`
@@ -36,7 +34,7 @@ async def alive(message: Message):
 
 
 async def refresh_id():
-    global LOGO_STICKER_ID, LOGO_STICKER_REF
+    global LOGO_STICKER_ID, LOGO_STICKER_REF  # pylint: disable=global-statement
     sticker = (await userge.get_messages('projectdils', 3)).sticker
     LOGO_STICKER_ID = sticker.file_id
     LOGO_STICKER_REF = sticker.file_ref
