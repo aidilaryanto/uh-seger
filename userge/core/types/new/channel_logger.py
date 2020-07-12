@@ -30,7 +30,8 @@ def _gen_string(name: str) -> str:
     return "**logger** : #" + name.split('.')[-1].upper() + "\n\n{}"
 
 
-def _get_file_id_and_ref(message: '_message.Message') -> Tuple[Optional[str], Optional[str]]:
+def _get_file_id_and_ref(
+        message: '_message.Message') -> Tuple[Optional[str], Optional[str]]:
     if message.audio:
         file_ = message.audio
     elif message.animation:
@@ -52,7 +53,8 @@ def _get_file_id_and_ref(message: '_message.Message') -> Tuple[Optional[str], Op
     return None, None
 
 
-def _parse_buttons(markdown_note: str):
+def _parse_buttons(
+        markdown_note: str) -> Tuple[str, List[Optional[List[InlineKeyboardButton]]]]:
     prev = 0
     note_data = ""
     buttons: List[Tuple[str, str, str]] = []
@@ -77,7 +79,8 @@ def _parse_buttons(markdown_note: str):
     return note_data.strip(), _build_keyboard(buttons)
 
 
-def _build_keyboard(buttons: List[Tuple[str, str, str]]):
+def _build_keyboard(
+        buttons: List[Tuple[str, str, str]]) -> List[Optional[List[InlineKeyboardButton]]]:
     keyb: List[List[InlineKeyboardButton]] = []
     for btn in buttons:
         if btn[2] and keyb:
@@ -209,10 +212,10 @@ class ChannelLogger:
         if message and message.media and file_id and file_ref:
             if caption:
                 caption = self._string.format(caption.strip())
-            msg = await self._client.send_cached_media(chat_id=Config.LOG_CHANNEL_ID,
-                                                       file_id=file_id,
-                                                       file_ref=file_ref,
-                                                       caption=caption)
+            msg = await message.client.send_cached_media(chat_id=Config.LOG_CHANNEL_ID,
+                                                         file_id=file_id,
+                                                         file_ref=file_ref,
+                                                         caption=caption)
             message_id = msg.message_id
         else:
             message_id = await self.log(caption)
@@ -250,8 +253,8 @@ class ChannelLogger:
             None
         """
         if message_id and isinstance(message_id, int):
-            message = await self._client.get_messages(chat_id=Config.LOG_CHANNEL_ID,
-                                                      message_ids=message_id)
+            message = await client.get_messages(chat_id=Config.LOG_CHANNEL_ID,
+                                                message_ids=message_id)
             caption = ''
             file_id = file_ref = None
             if message.caption:
@@ -259,8 +262,8 @@ class ChannelLogger:
             elif message.text:
                 caption = message.text.html.split('\n\n', maxsplit=1)[-1]
             if caption:
-                u_dict = await self._client.get_user_dict(user_id)
-                chat = await self._client.get_chat(chat_id)
+                u_dict = await client.get_user_dict(user_id)
+                chat = await client.get_chat(chat_id)
                 u_dict.update({
                     'chat': chat.title if chat.title else "this group",
                     'count': chat.members_count})
@@ -274,7 +277,6 @@ class ChannelLogger:
                     file_ref=file_ref,
                     caption=caption,
                     reply_to_message_id=reply_to_message_id,
-                    disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup(buttons)
                     if hasattr(client, 'ubot') and buttons else None)
             else:

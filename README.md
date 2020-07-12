@@ -131,7 +131,7 @@ Easy way to generate string session on Repl.it:
 
 ### Video Tutorial 🎥
 
-  [![Tutorial](resources/tutorial.jpg)](https://youtu.be/-XJj686zeiY "Tutorial")
+  [![Tutorial](resources/tutorial.jpg)](https://youtu.be/M4T_BJvFqkc "Tutorial")
 
 ### Support & Discussions 👥
 
