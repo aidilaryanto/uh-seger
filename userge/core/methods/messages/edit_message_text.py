@@ -13,7 +13,7 @@ __all__ = ['EditMessageText']
 import asyncio
 from typing import Optional, Union
 
-from pyrogram import InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardMarkup
 
 from userge import Config
 from ...ext import RawClient
@@ -88,9 +88,10 @@ class EditMessageText(RawClient):  # pylint: disable=missing-class-docstring
                                               disable_web_page_preview=disable_web_page_preview,
                                               reply_markup=reply_markup)
         if log:
+            args = [msg]
             if isinstance(log, str):
-                self._channel.update(log)
-            await self._channel.fwd_msg(msg)
+                args.append(log)
+            await self._channel.fwd_msg(*args)
         del_in = del_in or Config.MSG_DELETE_TIMEOUT
         if del_in > 0:
             await asyncio.sleep(del_in)

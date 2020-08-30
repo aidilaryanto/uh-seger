@@ -162,22 +162,24 @@ async def mv_to_global_note(message: Message) -> None:
                name="get_note",
                trigger='',
                filter_me=False,
-               allow_channels=False,
-               allow_bots=False,
                check_client=True)
 async def get_note(message: Message) -> None:
     """ get any saved note """
-    if not (message.from_user or message.chat):
+    if not message.from_user:
         return
     if message.chat.id not in NOTES_DATA:
         return
     can_access = message.from_user.is_self or message.from_user.id in Config.SUDO_USERS
     if Config.OWNER_ID:
         can_access = can_access or message.from_user.id == Config.OWNER_ID
-    notename = message.matches[0].group(1)
-    if notename not in NOTES_DATA[message.chat.id]:
+    notename = message.matches[0].group(1).lower()
+    mid, is_global = (0, False)
+    for note in NOTES_DATA[message.chat.id]:
+        if note.lower() == notename:
+            mid, is_global = NOTES_DATA[message.chat.id][note]
+            break
+    if not mid:
         return
-    mid, is_global = NOTES_DATA[message.chat.id][notename]
     if can_access or is_global:
         replied = message.reply_to_message
         user_id = message.from_user.id
